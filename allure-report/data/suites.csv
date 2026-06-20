@@ -1,0 +1,5 @@
+"DESCRIPTION","DURATION IN MS","NAME","PARENT SUITE","START TIME","STATUS","STOP TIME","SUB SUITE","SUITE","TEST CLASS","TEST METHOD"
+"","10182","@web browser playwright test ZARA COAT 3","","2026-06-15","passed","2026-06-15","","AcademyTest_LoginPOJ.spec.js","",""
+"","9427","@web calendar test","","2026-06-15","passed","2026-06-15","","Calendar.spec.js","",""
+"","8741","@web dropdowns","","2026-06-15","passed","2026-06-15","","UIBasics.spec.js","",""
+"","7341","@web browser playwright test ADIDAS ORIGINAL","","2026-06-15","passed","2026-06-15","","AcademyTest_LoginPOJ.spec.js","",""
