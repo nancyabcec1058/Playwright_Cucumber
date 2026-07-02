@@ -11,7 +11,6 @@ const testData = JSON.parse(JSON.stringify(require("../utils/AcademyTest_LoginTe
 for (const data of testData) {
    test(`@web browser playwright test ${data.productName}`, async ({ page }) => {
       const poManager = new POManager(page);
-      const products = await page.locator(".card-body");
 
       const loginPage = poManager.getLoginPage();
       await loginPage.gotoLoginPage();
@@ -41,7 +40,6 @@ for (const data of testData) {
 //run below test for custom fixture coming from testbase file in utils
 customtest("browser playwright test", async ({ page, testDataforOrder }) => {
    const poManager = new POManager(page);
-   const products = await page.locator(".card-body");
 
    const loginPage = poManager.getLoginPage();
    await loginPage.gotoLoginPage();

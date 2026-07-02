@@ -25,14 +25,14 @@ test("browser playwright test", async ({ browser }) => {
     await username.fill('rahulshetty');
     await page.locator("[type='password']").fill('Learning@830$3mK2');
     await signIn.click();
-    await console.log(page.locator("[style*='display']").textContent());
-    await expect(page.locator("[style*='display']")).toContainText('Incorrect username/password.');
+    await console.log(page.locator("[style*='block']").textContent());
+    await expect(page.locator("[style*='block']")).toContainText('Incorrect username/password.');
     await username.fill("");
     await username.fill("rahulshettyacademy");
     await signIn.click();
     //to get first element use first and nth(0) to access at element at 0,1 etc 
-    await console.log(await prodTitles.first().textContent());
-    await console.log(await prodTitles.nth(1).textContent());
+    console.log(await prodTitles.first().textContent());
+    console.log(await prodTitles.nth(1).textContent());
     const allProdTitles = await prodTitles.allTextContents();
     console.log(allProdTitles);
 

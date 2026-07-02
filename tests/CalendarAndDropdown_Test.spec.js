@@ -9,12 +9,11 @@ test("@web calendar test", async ({ page }) => {
     const expectdate = year + "-" + month + "-" + date;
     await page.goto("https://rahulshettyacademy.com/seleniumPractise/#/offers");
     await page.locator(".react-date-picker__inputGroup").click();
-    await page.locator(".react-calendar__navigation__label__labelText").click();
-    await page.locator(".react-calendar__navigation__label__labelText").click();
+    await page.locator(".react-calendar__navigation__label__labelText").dblclick();
     await page.getByText(year).click();
     //to convert string month to number
     await page.locator(".react-calendar__year-view__months__month").nth(Number(month) - 1).click();
-    await page.locator("//abbr[text()=22]").click();
+    await page.locator("//abbr[text()='"+date+"']").click();
 
     expect(await page.locator("//input[@name='date']").getAttribute("value")).toEqual(expectdate);
 
@@ -22,11 +21,14 @@ test("@web calendar test", async ({ page }) => {
 
 });
 test("popup validations", async ({ page }) => {
-
+    await page.goto("https://www.google.com");
     await page.goto("https://rahulshettyacademy.com/AutomationPractice/");
-    expect(await page.locator("#displayed-text")).toBeVisible();
+    //to move back and forward in navigation
+    await page.goBack();
+    await page.goForward();
+    await expect(page.locator("#displayed-text")).toBeVisible();
     await page.locator("#hide-textbox").click();
-    expect(await page.locator("#displayed-text")).toBeHidden();
+    await expect(page.locator("#displayed-text")).toBeHidden();
     //to handle popup
     page.on("dialog", dialog => dialog.accept());
     await page.locator("#confirmbtn").click();
@@ -38,10 +40,7 @@ test("popup validations", async ({ page }) => {
     const text = await framePage.locator(".text h2").textContent();
     console.log(text.split(" ")[1]);
 
-    //await page.goto("https://www.google.com");
-    //to move back and forward in navigation
-    // await page.goBack();
-    // await page.goForward();
+ 
 
 
 

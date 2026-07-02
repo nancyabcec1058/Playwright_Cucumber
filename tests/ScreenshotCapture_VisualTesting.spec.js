@@ -7,7 +7,7 @@ test("screenshot capture", async ({ page }) => {
     //to take screenshot of specific element
     await page.locator("#displayed-text").screenshot({ path: 'Partial_screenshot.png' });
     await page.locator("#hide-textbox").click();
-    //to take screenshot
+    //to take full page screenshot
     await page.screenshot({ path: 'screenshot.png' });
     expect(await page.locator("#displayed-text")).toBeHidden();
 });

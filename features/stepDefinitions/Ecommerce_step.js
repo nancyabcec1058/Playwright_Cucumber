@@ -1,12 +1,10 @@
 const { Given, When, Then } = require('@cucumber/cucumber')
 const { POManager } = require('../../PageObjects/POManager');
-const { test, expect } = require('@playwright/test')
-const playwright = require('@playwright/test');
+const { test, expect, playwright } = require('@playwright/test')
 
 Given('Login to ecommerce site with {string} and {string}', { timeout: 100 * 1000 }, async function (username, password) {
 
 
-    const products = await this.page.locator(".card-body");
     const loginPage = this.poManager.getLoginPage();
     await loginPage.gotoLoginPage();
     await loginPage.validLogin(username, password);
