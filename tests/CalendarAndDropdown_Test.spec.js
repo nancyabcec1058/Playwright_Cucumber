@@ -4,14 +4,14 @@ const { test, expect } = require('@playwright/test')
 test.describe.configure({ mode: 'parallel' })
 test("@web calendar test", async ({ page }) => {
     const month = "08";
-    const date = "20";
+    const date = "22";
     const year = "2027";
     const expectdate = year + "-" + month + "-" + date;
     await page.goto("https://rahulshettyacademy.com/seleniumPractise/#/offers");
     await page.locator(".react-date-picker__inputGroup").click();
     await page.locator(".react-calendar__navigation__label__labelText").dblclick();
     await page.getByText(year).click();
-    //to convert string month to number
+    //to convert string month to number use Number
     await page.locator(".react-calendar__year-view__months__month").nth(Number(month) - 1).click();
     await page.locator("//abbr[text()='"+date+"']").click();
 
