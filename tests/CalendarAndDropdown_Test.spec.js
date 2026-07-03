@@ -4,7 +4,7 @@ const { test, expect } = require('@playwright/test')
 test.describe.configure({ mode: 'parallel' })
 test("@web calendar test", async ({ page }) => {
     const month = "08";
-    const date = "22";
+    const date = "20";
     const year = "2027";
     const expectdate = year + "-" + month + "-" + date;
     await page.goto("https://rahulshettyacademy.com/seleniumPractise/#/offers");
