@@ -11,7 +11,7 @@ test("@web calendar test", async ({ page }) => {
     await page.locator(".react-date-picker__inputGroup").click();
     await page.locator(".react-calendar__navigation__label__labelText").dblclick();
     await page.getByText(year).click();
-    //to convert string month to number use Number
+    //to convert string month to number use Number function
     await page.locator(".react-calendar__year-view__months__month").nth(Number(month) - 1).click();
     await page.locator("//abbr[text()='"+date+"']").click();
 
