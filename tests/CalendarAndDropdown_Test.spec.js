@@ -33,7 +33,7 @@ test("popup validations", async ({ page }) => {
     page.on("dialog", dialog => dialog.accept());
     await page.locator("#confirmbtn").click();
     await page.locator("#mousehover").hover();
-    //frames
+    // handle frames
     const framePage = page.frameLocator("#courses-iframe");
     //here is only one element u can see and others are hidden and u want to select visible element
     await framePage.locator("li  a[href='lifetime-access']:visible").click();
